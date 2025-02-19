@@ -1,0 +1,13 @@
+services:
+  redis-expire-mapping-keys:
+    build:
+      context: ./redis/expire-mapping-keys
+      dockerfile: Dockerfile
+    depends_on:
+      redis-healthcheck:
+        condition: service_healthy
+    environment:
+      - REDIS_HOST=musicpresence-client-proxy_redis
+      - REDIS_PORT=6379
+      - DESIRED_EXPIRE=60
+      - DESIRED_INVERVAL=30
