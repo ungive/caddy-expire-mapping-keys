@@ -8,6 +8,7 @@ from urllib.parse import unquote
 
 
 # workaround to fix non-expiring mapping keys and ever-growing surrogate keys.
+# see https://github.com/caddyserver/cache-handler/issues/118
 # see https://github.com/darkweak/storages/issues/23
 
 
